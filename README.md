@@ -30,14 +30,14 @@ git clone https://github.com/Quacky2200/id-phrase-generator
 
 **There is an example available in example.js** but here's another
 
-```
+```js
 var IDPhraseGenerator = require('id-phrase-generator');
 ```
 
 You must then create a new instance which can have the following options:
 - numbers - always shown
 - determiners - shown randomly (coin-flip)
-```
+```js
 var generator = new IDPhraseGenerator({
 	numbers: true,
 	determiners: true
@@ -45,7 +45,7 @@ var generator = new IDPhraseGenerator({
 ```
 
 This gives you a generator that you can continually call with the same options.
-```
+```js
 > console.log(generator.next());
 the-twelve-everlasting-red-sweets
 ```
