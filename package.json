@@ -1,0 +1,26 @@
+{
+  "name": "id-phrase-generator",
+  "version": "1.0.0",
+  "description": "Generates unique phrases for ids that make more sense than normal, and rememberable",
+  "main": "index.js",
+  "scripts": {
+    "test": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quacky2200/id-phrase-generator.git"
+  },
+  "keywords": [
+    "id",
+    "generator",
+    "unique",
+    "name",
+    "phrase"
+  ],
+  "author": "Matthew James <Quacky2200@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Quacky2200/id-phrase-generator/issues"
+  },
+  "homepage": "https://github.com/Quacky2200/id-phrase-generator#readme"
+}
