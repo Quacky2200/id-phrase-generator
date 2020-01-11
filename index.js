@@ -1,4 +1,5 @@
 var fs = require('fs');
+var rand = require('./random');
 
 var extent = (fs.readFileSync(__dirname + '/extent-adjectives.txt')
 	.toString('utf-8').replace(/\r/g, '').split('\n')
@@ -66,40 +67,53 @@ var determiners = [
 	'once'
 ];
 
-var rand = function(min, max) {
-	return Math.floor(Math.random() * (max - min)) + min;
-};
-
 module.exports = function(opts) {
 
-	opts = opts || {};
+	var _opts = opts || {};
 
-	var addNumbers = opts.numbers || false;
-	var addDeterminers = opts.determiners || false;
+	this.update = function(value) {
+		_opts = value;
+
+		return this;
+	};
 
 	this.next = function() {
 
-		addNumbers = addNumbers || false;
+		var addNumbers = _opts.numbers || false;
+		var addDeterminers = _opts.determiners || false;
+
+		if (_opts.alternate) {
+			switch (rand(0, 1)) {
+				case 0:
+					addNumbers = true;
+					addDeterminers = false;
+					break;
+				case 1:
+					addNumbers = false;
+					addDeterminers = true;
+					break;
+			}
+		}
 
 		var instance = [
-			extent[rand(0, extent.length)],
-			attribute[rand(0, attribute.length)],
-			nouns[rand(0, nouns.length)]
+			extent[rand(0, extent.length - 1)],
+			attribute[rand(0, attribute.length - 1)],
+			nouns[rand(0, nouns.length - 1)]
 		];
 
 		if (addNumbers) {
 			var numbers = [];
-			switch(rand(0, 5)) {
+			switch(rand(1, 4)) {
 				case 1:
-					numbers = [ones[rand(0, ones.length)]];
+					numbers = [ones[rand(0, ones.length - 1)]];
 					break;
 				case 2:
-					numbers = [teens[rand(0, teens.length)]];
+					numbers = [teens[rand(0, teens.length - 1)]];
 					break;
 				case 3:
-					numbers = [tens[rand(0, tens.length)]];
+					numbers = [tens[rand(0, tens.length - 1)]];
 					if (rand(0, 2)) {
-						numbers.push(ones[rand(0, ones.length)]);
+						numbers.push(ones[rand(0, ones.length - 1)]);
 					}
 					break;
 				case 4:
@@ -114,9 +128,9 @@ module.exports = function(opts) {
 		}
 
 		if (addDeterminers) {
-			switch (rand(0, 2)) {
+			switch (rand(0, 1)) {
 				case 1:
-					instance.unshift(determiners[rand(0, determiners.length)]);
+					instance.unshift(determiners[rand(0, determiners.length - 1)]);
 			}
 		}
 
