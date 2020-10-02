@@ -34,7 +34,7 @@ deafening
 deep
 definite
 dense
-destructable
+destructible
 disfigured
 disguised
 disobedient
@@ -74,7 +74,7 @@ fatigued
 flaky
 flashy
 flirtatious
-flourescent
+fluorescent
 foolish
 forbidden
 frozen
@@ -89,7 +89,7 @@ imaginable
 immortal
 imperishable
 indefinite
-indestructable
+indestructible
 inferior
 infinite
 informed
@@ -106,7 +106,6 @@ light
 limitless
 lively
 livid
-longlasting
 loud
 loudmouthed
 low
@@ -137,6 +136,7 @@ plain
 poor
 powerful
 powerless
+prevailing
 private
 profound
 psychedelic

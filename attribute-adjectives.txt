@@ -1,12 +1,12 @@
 accessible
-acient
 adorable
 aggressive
 altruistic
 amber
+ancient
 angry
 apple
-appricot
+apricot
 aqua
 aquamarine
 artic
@@ -165,9 +165,9 @@ messy
 moderate
 modern
 modest
+moldy
 monthly
 moody
-moudly
 mucky
 muddy
 mulberry
